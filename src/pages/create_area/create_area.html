@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Gebiet hinzufügen</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Name:</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item *ngFor="let street of streets">
+      {{ street }}
+      <button clear item-right>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder=""></ion-input>
+      <button clear item-right>
+        <ion-icon name="arrow-round-forward"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer no-shadow>
+  <ion-toolbar position="bottom">
+    <button ion-button full>Hinzufügen</button>
+  </ion-toolbar>
+</ion-footer>

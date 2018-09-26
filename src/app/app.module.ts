@@ -7,9 +7,11 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { CreateAreaPage } from './../pages/create_area/create_area';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AreaDetailPage } from '../pages/area_detail_page/area_detail_page';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
+    CreateAreaPage,
+    AreaDetailPage,
     TabsPage
   ],
   imports: [
@@ -29,7 +33,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    CreateAreaPage,
+    AreaDetailPage,
+    TabsPage,
   ],
   providers: [
     StatusBar,
