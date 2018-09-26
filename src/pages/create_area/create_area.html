@@ -8,11 +8,11 @@
   <ion-list>
     <ion-item>
       <ion-label fixed>Name:</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" [(ngModel)]="area.name"></ion-input>
     </ion-item>
   </ion-list>
   <ion-list>
-    <ion-item *ngFor="let street of streets">
+    <ion-item *ngFor="let street of area?.steets">
       {{ street }}
       <button clear item-right>
         <ion-icon name="close"></ion-icon>
@@ -28,6 +28,6 @@
 </ion-content>
 <ion-footer no-shadow>
   <ion-toolbar position="bottom">
-    <button ion-button full>Hinzufügen</button>
+    <button ion-button full (click)="saveArea()">Hinzufügen</button>
   </ion-toolbar>
 </ion-footer>

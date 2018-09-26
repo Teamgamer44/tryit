@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { StorgeHelper, Enums, Area } from '../../app/StorageHelper';
 
 @Component({
   selector: 'create-area',
@@ -10,9 +11,13 @@ export class CreateAreaPage {
     'Hauptstraße',
     'Nebenstraße',
   ];
+  area:Area={};
+  constructor(public navCtrl: NavController,private storgeHelper:StorgeHelper) {
 
-  constructor(public navCtrl: NavController) {
+  }
 
+  saveArea() {
+this.storgeHelper.save(Enums.Area,this.area);
   }
 
   removeStreet(street) {}
