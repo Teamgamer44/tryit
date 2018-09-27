@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
-import { StorgeHelper, Enums, Area } from '../../app/StorageHelper';
+import { StorageHelper, Enums, Area } from '../../app/StorageHelper';
 import { HomePage } from '../home/home';
 
 
@@ -14,7 +14,7 @@ export class AreaDetailPage implements OnInit {
     public navCtrl: NavController,
     public navParams: NavParams,
     private alertCtrl: AlertController,
-    private storgeHelper:StorgeHelper) {
+    private storageHelper:StorageHelper) {
     this.area = this.navParams.data.area;
   }
 
@@ -33,7 +33,7 @@ export class AreaDetailPage implements OnInit {
         {
           text: 'Ja',
           handler: () => {
-            this.storgeHelper.delete(Enums.Area, this.area.id);
+            this.storageHelper.delete(Enums.Area, this.area.id);
             this.navCtrl.push(HomePage);
           }
         }
@@ -44,6 +44,6 @@ export class AreaDetailPage implements OnInit {
   }
 
   private load(){
-    this.storgeHelper.load(Enums.Area );
+    this.storageHelper.load(Enums.Area );
   }
 }

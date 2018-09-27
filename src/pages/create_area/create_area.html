@@ -12,7 +12,7 @@
     </ion-item>
   </ion-list>
   <ion-list>
-    <ion-item *ngFor="let street of area?.steets">
+    <ion-item *ngFor="let street of area?.streets">
       {{ street }}
       <button clear item-right>
         <ion-icon name="close"></ion-icon>
@@ -20,8 +20,8 @@
     </ion-item>
     <ion-item>
       <ion-input type="text" placeholder=""></ion-input>
-      <button clear item-right>
-        <ion-icon name="arrow-round-forward"></ion-icon>
+      <button clear item-right click="addStreet()">
+        <ion-icon name="add"></ion-icon>
       </button>
     </ion-item>
   </ion-list>

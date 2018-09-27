@@ -12,7 +12,7 @@ import { CreateAreaPage } from './../pages/create_area/create_area';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AreaDetailPage } from '../pages/area_detail_page/area_detail_page';
-import { StorgeHelper } from './StorageHelper';
+import { StorageHelper } from './StorageHelper';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -44,7 +44,7 @@ import { FormsModule } from '@angular/forms';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    StorgeHelper
+    StorageHelper
   ]
 })
 export class AppModule {}

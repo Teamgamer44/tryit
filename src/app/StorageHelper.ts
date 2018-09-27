@@ -1,6 +1,6 @@
 import { NavController } from 'ionic-angular';
 export enum Enums { "Area" }
-export class StorgeHelper {
+export class StorageHelper {
 
   load(key: Enums)
   load(key: Enums, id?: number)
@@ -39,15 +39,15 @@ export interface Base {
 export class DummyArea {
   constructor() { }
   areas: Area[] = [
-    { id: 1, steets: [], name: "Neuwied" },
-    { id: 2, steets: [], name: "Andernach" },
-    { id: 3, steets: [], name: "Weißenthurm" },
-    { id: 4, steets: [], name: "Mülheim-Kärlich" },
+    { id: 1, streets: [], name: "Neuwied" },
+    { id: 2, streets: [], name: "Andernach" },
+    { id: 3, streets: [], name: "Weißenthurm" },
+    { id: 4, streets: [], name: "Mülheim-Kärlich" },
   ];
 }
 
 export class Area implements Base {
-  public steets: Street[] = [];
+  public streets: Street[] = [];
   public name: string;
   public id: number;
 }

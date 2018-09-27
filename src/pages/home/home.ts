@@ -2,7 +2,7 @@ import { AreaDetailPage } from './../area_detail_page/area_detail_page';
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { CreateAreaPage } from '../create_area/create_area';
-import { DummyArea, Area, StorgeHelper, Enums } from '../../app/StorageHelper';
+import { DummyArea, Area, StorageHelper, Enums } from '../../app/StorageHelper';
 
 @Component({
     selector: 'page-home',
@@ -21,7 +21,7 @@ ionViewWillEnter(){
     // 'Neuwied',
     //];
 
-    constructor(public navCtrl: NavController, public navParams: NavParams,private storgeHelper:StorgeHelper) {
+    constructor(public navCtrl: NavController, public navParams: NavParams,private storageHelper:StorageHelper) {
 
     }
 
@@ -30,7 +30,7 @@ ionViewWillEnter(){
     // }
 
     private load() {
-        this.items = this.storgeHelper.load(Enums.Area);
+        this.items = this.storageHelper.load(Enums.Area);
     }
 
     navigateToCreateAreaPage() {
