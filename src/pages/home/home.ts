@@ -33,8 +33,6 @@ ionViewWillEnter(){
         this.items = this.storgeHelper.load(Enums.Area);
     }
 
-
-
     navigateToCreateAreaPage() {
         this.navCtrl.push(CreateAreaPage);
     }

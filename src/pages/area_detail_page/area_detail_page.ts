@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { StorgeHelper, Enums, Area } from '../../app/StorageHelper';
 import { HomePage } from '../home/home';
 
@@ -10,7 +10,11 @@ import { HomePage } from '../home/home';
 })
 export class AreaDetailPage implements OnInit {
   area:Area;
-  constructor(public navCtrl: NavController, public navParams: NavParams,private storgeHelper:StorgeHelper) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private alertCtrl: AlertController,
+    private storgeHelper:StorgeHelper) {
     this.area = this.navParams.data.area;
   }
 
@@ -19,8 +23,24 @@ export class AreaDetailPage implements OnInit {
   }
 
   delete() {
-    this.storgeHelper.delete(Enums.Area, this.area.id);
-    this.navCtrl.push(HomePage);
+    const confirm = this.alertCtrl.create({
+      title: 'Gebiet entfernen',
+      message: 'Das Gebiet wird aus deiner Kollektion entfernt. Möchtest du fortfahren?',
+      buttons: [
+        {
+          text: 'Nein',
+        },
+        {
+          text: 'Ja',
+          handler: () => {
+            this.storgeHelper.delete(Enums.Area, this.area.id);
+            this.navCtrl.push(HomePage);
+          }
+        }
+      ]
+    });
+
+    confirm.present();
   }
 
   private load(){
