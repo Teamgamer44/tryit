@@ -31,6 +31,7 @@ export class CreateAreaPage {
 
     let toast = this.toastCtrl.create({
       message: 'Das Gebiet \"' + this.area.name + '\" wurde erstellt.',
+      duration: 2000,
       position: 'bottom'
     });
 
