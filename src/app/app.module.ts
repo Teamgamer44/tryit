@@ -12,6 +12,8 @@ import { CreateAreaPage } from './../pages/create_area/create_area';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AreaDetailPage } from '../pages/area_detail_page/area_detail_page';
+import { StorgeHelper } from './StorageHelper';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { AreaDetailPage } from '../pages/area_detail_page/area_detail_page';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -35,12 +38,13 @@ import { AreaDetailPage } from '../pages/area_detail_page/area_detail_page';
     HomePage,
     CreateAreaPage,
     AreaDetailPage,
-    TabsPage,
+    TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    StorgeHelper
   ]
 })
 export class AppModule {}
